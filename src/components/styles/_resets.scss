@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: calc(100vw / 1440 * 16);
+    line-height: 1.4;
+}
+
+@font-face {
+    font-family: regular;
+    src: url(../fonts/PlusJakartaSans-Medium.woff2);
+}
+
+@font-face {
+    font-family: Notbold;
+    src: url(../fonts/PlusJakartaSans-SemiBold.woff2);
+}
+
+
+body{
+    font-family: regular;
+}
