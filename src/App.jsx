@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Hero />
-      <Grid />
+      {/* <Grid /> */}
     </>
   )
 }

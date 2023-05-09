@@ -4,7 +4,7 @@
 .hero {
     width: 100%;
     height: 100vh;
-    background-image:  url('/assets/images/background.jpeg');
+    background-image: url('/assets/images/background.jpeg');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -12,9 +12,14 @@
     align-items: center;
     background-position: center;
     top: 0;
-    bottom: 0;
+    bottom: 0; 
+     @include mobile {
+        background-image: url('/assets/images/mobilebackground.jpeg');
+        background-size: cover;
+        height: 70vh;
+    }
 
-    &::before{
+    &::before {
         content: "";
         display: block;
         position: absolute;
@@ -32,6 +37,7 @@
         max-width: 650px;
         position: absolute;
         z-index: 1;
+
         .main-content-header {
             color: $white;
             font-size: 2.8rem;
@@ -43,12 +49,13 @@
             position: relative;
             padding: 5px;
             display: flex;
-            width: 100%;
-            height: 50px;
+            width: 90%;
+            height: 45px;
             border-radius: 10px;
             background-color: $white;
             margin-top: 30px;
-            ul{
+
+            ul {
                 position: absolute;
                 z-index: 3;
                 width: 135px;
@@ -56,10 +63,11 @@
                 background-color: $white;
                 list-style: none;
                 display: flex;
-                transition: all 0.1s ease-in 0.2s;
+                transition: all 0.1s ease-in 0.1s;
                 flex-direction: column;
                 bottom: 55px;
-                li{
+
+                li {
                     width: 100%;
                     display: flex;
                     align-items: center;
@@ -68,11 +76,20 @@
                     font-size: 1.4rem;
                     padding: 15px;
 
+                    img {
+                        width: 13px;
+                        height: 13px;
+                    }
                 }
             }
+
             .input-btn {
                 width: 180px;
                 height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
                 background-color: #DFDFE0;
                 font-family: regular;
                 font-weight: 500;
@@ -80,9 +97,17 @@
                 text-transform: capitalize;
                 border-radius: 10px;
                 border: none;
+                h5{
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+                img {
+                    width: 13px;
+                    height: 13px;
+                }
             }
 
-            .input-svg{
+            .input-svg {
                 width: 70px;
                 align-items: center;
                 display: flex;
@@ -90,6 +115,7 @@
                 height: 100%;
 
             }
+
             input {
                 width: 100%;
                 height: 100%;
@@ -97,14 +123,15 @@
                 border-radius: 10px;
                 border: none;
                 font-size: 1.5rem;
-                &::placeholder{
+
+                &::placeholder {
                     font-size: 1.5rem;
                     font-family: 600;
                     color: #606262;
                     text-transform: capitalize;
                 }
 
-                &:focus{
+                &:focus {
                     outline: none;
                 }
             }

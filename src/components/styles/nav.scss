@@ -2,23 +2,101 @@
 
 nav {
     display: flex;
-    width: 100%;
-    padding: 20px 35px;
-    height: 100px;
+     width: 100vw;
+    padding: 15px 25px;
+    height: 80px;
     z-index: 2;
+    transition: all .4s ease,visibility .36s;
     position: absolute;
     top: 0;
     justify-content: space-between;
+    @include mobile {
+        width: 100%;
+        padding: 25px 0;
+    }
+    
+    .nav-input-container{
+        width: 100%;
+        visibility: hidden;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 9px;
+        background-color: $secondary;
+        margin-left: 30px;
+        margin-right: 60px;
+        padding: 10px 0 10px 10px;
+        .input-left{
+            padding: 7px;
+            border-right: 1px solid $primary;
+            height: 100%;
+            width: 100px;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            justify-items: center;
+            
+            .left-paragraph{
+                font-size: 1.2rem;
+                color: $primary;
+                text-transform: capitalize;
+            }
+            img{
+                width: 13px;
+                height: 13px;
+            }
+        }
 
+        .input-center{
+            width: 100%;
+            // padding-left: 10px;
+            height: 100%;
+            input{
+                width: 80%;
+                @extend .input-center;
+                background-color: $secondary;
+                font-size: 1.5rem;
+                border: none;
+                &::placeholder{
+                    font-size: 1.5rem;
+                    font-family: regular;
+                    color:$titary;
+                    letter-spacing: 0;
+                    font-weight: 500;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+
+        .input-right{
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
     .nav-left {
         display: flex;
-
+        @include mobile {
+            display: none;
+        }
         .nav-items {
             display: flex;
-            gap: 40px;
+            gap: 20px;
             align-items: center;
             list-style: none;
+          
 
+            .nav-link-extra{
+                @extend .nav-link;
+                color: black;
+                p{
+                    color: black;
+                }
+            }
             .nav-link {
                 display: flex;
                 height: 100%;
@@ -28,7 +106,7 @@ nav {
                 align-items: center;
                 text-transform: capitalize;
                 font-weight: 700;
-                font-size: 1.3rem;
+                font-size: 1.2rem;
                 font-family: Notbold;
                 transition: all 0.2s ease-in;
                 cursor: pointer;
@@ -36,6 +114,7 @@ nav {
                 &:hover svg{
                     stroke: $ligth-black;
                 }
+               
                 p {
                     &:hover {
                         color: $ligth-black;
@@ -54,7 +133,7 @@ nav {
                     padding-bottom: 5px;
                     border-radius: 10px;
                     z-index: 1;
-                    box-shadow: 10px 0 20px 2px rgba(0, 0, 0, .3);
+                    box-shadow: 10px 0 20px 2px rgba(0, 0, 0, .2);
                     background-color: $white;
 
                     &::after {
@@ -78,18 +157,19 @@ nav {
                         text-transform: capitalize;
 
                         &:hover {
-                            background-color: $ligth-black;
+                            background-color: $secondary;
                         }
                     }
                 }
 
 
             }
+           
         }
 
         .nav-btn {
             height: 90%;
-            width: 80px;
+            width: 70px;
             background-color: $white;
             font-family: Notbold;
             text-transform: capitalize;
@@ -109,7 +189,7 @@ nav {
             justify-content: center;
             align-items: center;
             border: none;
-            width: 80px;
+            width: 65px;
         }
     }
 

@@ -11,7 +11,22 @@
 
     .carousel-container {
         display: flex;
+        align-items: center;
+        justify-content: center;
         column-gap: 20px;
+        .grid-carosel-paragraph{
+            text-transform: capitalize;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: $primary;
+        }
+        .active{
+            background-color: black;
+            padding: 11px 18px;
+            border-radius: 25px;
+            color: $white;
+        }
     }
 
     .grid-header {

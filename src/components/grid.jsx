@@ -41,7 +41,7 @@ export default function Grid() {
     return (
         <div className="grid-wrapper">
             <div className="carousel-container">
-                <div className="grid-carosel-paragraph"><p>home</p></div>
+                <div className="grid-carosel-paragraph active"><p>home</p></div>
                 <div className="grid-carosel-paragraph"><p>videos</p></div>
                 <div className="grid-carosel-paragraph"><p>leaderboard</p></div>
                 <div className="grid-carosel-paragraph"><p>challenges</p></div>
