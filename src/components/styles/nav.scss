@@ -2,20 +2,21 @@
 
 nav {
     display: flex;
-     width: 100vw;
+    width: 100vw;
     padding: 15px 25px;
     height: 80px;
     z-index: 2;
-    transition: all .4s ease,visibility .36s;
+    transition: all .4s ease, visibility .36s;
     position: absolute;
     top: 0;
     justify-content: space-between;
+
     @include mobile {
         width: 100%;
-        padding: 25px 0;
+        padding: 15px 25px;
     }
-    
-    .nav-input-container{
+
+    .nav-input-container {
         width: 100%;
         visibility: hidden;
         height: 100%;
@@ -27,7 +28,14 @@ nav {
         margin-left: 30px;
         margin-right: 60px;
         padding: 10px 0 10px 10px;
-        .input-left{
+
+        @include mobile {
+            visibility: visible;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .input-left {
             padding: 7px;
             border-right: 1px solid $primary;
             height: 100%;
@@ -36,67 +44,76 @@ nav {
             gap: 5px;
             align-items: center;
             justify-items: center;
-            
-            .left-paragraph{
+
+            .left-paragraph {
                 font-size: 1.2rem;
                 color: $primary;
                 text-transform: capitalize;
             }
-            img{
+
+            img {
                 width: 13px;
                 height: 13px;
             }
         }
 
-        .input-center{
+        .input-center {
             width: 100%;
             // padding-left: 10px;
             height: 100%;
-            input{
+
+            input {
                 width: 80%;
                 @extend .input-center;
                 background-color: $secondary;
                 font-size: 1.5rem;
                 border: none;
-                &::placeholder{
+
+                &::placeholder {
                     font-size: 1.5rem;
                     font-family: regular;
-                    color:$titary;
+                    color: $titary;
                     letter-spacing: 0;
                     font-weight: 500;
                 }
-                &:focus{
+
+                &:focus {
                     outline: none;
                 }
             }
         }
 
-        .input-right{
+        .input-right {
             width: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
     }
+
     .nav-left {
         display: flex;
+
         @include mobile {
             display: none;
         }
+
         .nav-items {
             display: flex;
             gap: 20px;
             align-items: center;
             list-style: none;
-          
 
-            .nav-link-extra{
+
+            .nav-link-extra {
                 @extend .nav-link;
                 color: black;
-                p{
+
+                p {
                     color: black;
                 }
             }
+
             .nav-link {
                 display: flex;
                 height: 100%;
@@ -111,10 +128,11 @@ nav {
                 transition: all 0.2s ease-in;
                 cursor: pointer;
                 color: white;
-                &:hover svg{
+
+                &:hover svg {
                     stroke: $ligth-black;
                 }
-               
+
                 p {
                     &:hover {
                         color: $ligth-black;
@@ -164,7 +182,7 @@ nav {
 
 
             }
-           
+
         }
 
         .nav-btn {
@@ -191,6 +209,30 @@ nav {
             border: none;
             width: 65px;
         }
+    }
+
+    .hamburger {
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+
+        .nav-btn {
+            height: 70%;
+            width: 60px;
+            background-color: $white;
+            font-family: Notbold;
+            text-transform: capitalize;
+            font-size: 3rem;
+            border: none;
+            border-radius: 7px;
+
+            &:hover {
+                cursor: pointer
+            }
+        }
+
     }
 
 }
