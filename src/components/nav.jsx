@@ -68,7 +68,7 @@ export default function Nav() {
             </div>
             <div className="hamburger">
                 <button className="nav-btn" style={windowHeight >= 500 ? { backgroundColor: '#05A081', color: 'white' } : { backgroundColor: 'white' }}>join</button>
-                <svg width="26" height="26" class="spacing_noMargin__Q_PsJ" viewBox="0 0 24 24"><use xlink:href="#menu-f3883d0dbd751749e5f9b72aa0c91502"></use></svg>
+                <svg width="35" height="64" viewBox="0 0 72 72" id="emoji" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="color"></g> <g id="hair"></g> <g id="skin"></g> <g id="skin-shadow"></g> <g id="line"> <line x1="16" x2="56" y1="26" y2="26" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"></line> <line x1="16" x2="56" y1="36" y2="36" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"></line> <line x1="16" x2="56" y1="46" y2="46" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"></line> </g> </g></svg>
             </div>
         </nav>
     )

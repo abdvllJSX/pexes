@@ -13,7 +13,9 @@ nav {
 
     @include mobile {
         width: 100%;
-        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 15px;
     }
 
     .nav-input-container {
@@ -30,7 +32,7 @@ nav {
         padding: 10px 0 10px 10px;
 
         @include mobile {
-            visibility: visible;
+            display: none;
             margin-left: 0;
             margin-right: 0;
         }
@@ -39,7 +41,7 @@ nav {
             padding: 7px;
             border-right: 1px solid $primary;
             height: 100%;
-            width: 100px;
+            width: 120px;
             display: flex;
             gap: 5px;
             align-items: center;
@@ -59,7 +61,7 @@ nav {
 
         .input-center {
             width: 100%;
-            // padding-left: 10px;
+            padding-left: 10px;
             height: 100%;
 
             input {
@@ -213,9 +215,10 @@ nav {
 
     .hamburger {
         display: none;
-
         @include mobile {
-            display: block;
+            display: flex;
+            gap: 7px;
+            align-items: center;
         }
 
         .nav-btn {
@@ -224,7 +227,7 @@ nav {
             background-color: $white;
             font-family: Notbold;
             text-transform: capitalize;
-            font-size: 3rem;
+            font-size: 2.5rem;
             border: none;
             border-radius: 7px;
 
