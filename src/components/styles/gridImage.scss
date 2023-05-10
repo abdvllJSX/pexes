@@ -5,8 +5,12 @@
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-     grid-template-rows: 400px 60px 400px 60px 400px 60px 400px 60px 400px 60px ;
+    grid-template-rows: 400px 60px 400px 60px 400px 60px 400px 60px 400px 60px ;
     gap: 28px;
+    @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 200px 80px 200px 60px 200px 80px 200px 80px 200px 80px ;
+    }
 
 
     .img-container {
