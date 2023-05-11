@@ -8,3 +8,11 @@
         @content;
     }
 }
+
+@mixin small-screen {
+    @media (max-width: 450px) {
+        @content;
+    }
+}
+
+

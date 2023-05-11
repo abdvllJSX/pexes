@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import GridImage from "./gridimage";
 
 
-export default function Grid() {
+export default function Grid(props) {
     const [hover, setHover] = useState()
     function createImage() {
         let imageArray = []
@@ -33,7 +33,7 @@ export default function Grid() {
     ))
 
     return (
-        <div className="grid-wrapper">
+        <div className="grid-wrapper" style={props.open ? {display: "block"}: {display: "none"}}>
             <div className="carousel-container">
                 <div className="grid-carosel-paragraph active"><p>home</p></div>
                 <div className="grid-carosel-paragraph"><p>videos</p></div>

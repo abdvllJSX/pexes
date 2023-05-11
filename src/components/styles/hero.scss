@@ -13,11 +13,16 @@
     padding: 0 20px;
     background-position: center;
     top: 0;
-    bottom: 0; 
-     @include mobile {
+    bottom: 0;
+
+    @include mobile {
         background-image: url('/assets/images/mobilebackground.jpeg');
         background-size: cover;
-        height: 60vh;
+        height: 55vh;
+    }
+
+    @include small-screen {
+        height: 55vh;
     }
 
     &::before {
@@ -31,21 +36,31 @@
         background-color: rgba(0, 0, 0, 0.8);
         opacity: 0.5;
         z-index: 1;
+
         @include mobile {
-            height: 60vh;
+            height: 55vh;
         }
+
+        @include small-screen {
+            height: 55vh;
+        }
+
     }
 
     .main-content {
         margin-top: 100px;
-        
         position: absolute;
         z-index: 1;
+
         @include mobile {
             padding: 0 20px;
-            margin-top: 30px;
-            ;
+            margin-top: 60px;
         }
+
+        @include small-screen {
+            margin-top: 50px;
+        }
+
 
         .main-content-header {
             color: $white;
@@ -53,9 +68,15 @@
             font-weight: 600;
             max-width: 650px;
             line-height: 40px;
+
             @include mobile {
-                font-size: 4rem;
-                max-width: 700px
+                font-size: 34px;
+                max-width: 650px
+            }
+
+            @include small-screen {
+                font-size: 32px;
+                max-width: 450px;
             }
         }
 
@@ -68,6 +89,11 @@
             border-radius: 10px;
             background-color: $white;
             margin-top: 30px;
+
+            @include small-screen {
+                height: 50px;
+                width: 100%;
+            }
 
             ul {
                 position: absolute;
@@ -111,16 +137,30 @@
                 text-transform: capitalize;
                 border-radius: 10px;
                 border: none;
+                @include small-screen{
+                   gap: 15px;
+                   width: 90px;
+                }
                 @include mobile {
                     width: 130px;
                 }
-                h5{
+
+                h5 {
                     text-transform: capitalize;
                     font-weight: 500;
+
+                    @include small-screen {
+                        display: none;
+                    }
                 }
+
                 img {
                     width: 13px;
                     height: 13px;
+                    @include small-screen {
+                        width: 15px;
+                        height: 15px;
+                    }
                 }
             }
 
@@ -146,6 +186,9 @@
                     font-family: 600;
                     color: #606262;
                     text-transform: capitalize;
+                    @include small-screen {
+                        font-size: 12px;
+                    }
                 }
 
                 &:focus {
@@ -162,6 +205,9 @@
             margin-top: 30px;
             font-size: 1.4rem;
             color: $white;
+            @include small-screen {
+                font-size: 12px;
+            }
         }
     }
 }

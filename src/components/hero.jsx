@@ -5,12 +5,12 @@ import arrowup from '/assets/arrowup.svg'
 import arrowdown from '/assets/arrowdown.svg'
 import img from '/assets/img.svg'
 
-export default function Hero() {
+export default function Hero(props) {
     const [hover, setHover] = useState()
     return (
         <div className="hero">
-            <Nav />
-            <div className="main-content">
+            
+            <div className="main-content" style={props.open ? {display: "block"} : {display: "none"} }>
                 <h2 className="main-content-header">
                     The best free stock photos, royalty free
                     images & video shared by creators.
