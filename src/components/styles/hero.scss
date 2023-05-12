@@ -22,7 +22,7 @@
     }
 
     @include small-screen {
-        height: 55vh;
+        height: 60vh;
     }
 
     &::before {
@@ -42,13 +42,13 @@
         }
 
         @include small-screen {
-            height: 55vh;
+            height: 60vh;
         }
 
     }
 
     .main-content {
-        margin-top: 100px;
+        
         position: absolute;
         z-index: 1;
 
@@ -75,6 +75,7 @@
             }
 
             @include small-screen {
+                padding-top: 30px;
                 font-size: 32px;
                 max-width: 450px;
             }

@@ -8,9 +8,9 @@ import img from '/assets/img.svg'
 export default function Hero(props) {
     const [hover, setHover] = useState()
     return (
-        <div className="hero">
+        <div className="hero" >
             
-            <div className="main-content" style={props.open ? {display: "block"} : {display: "none"} }>
+            <div className="main-content" >
                 <h2 className="main-content-header">
                     The best free stock photos, royalty free
                     images & video shared by creators.
