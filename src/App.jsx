@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Hero from './components/hero'
 import Nav from './components/nav'
 import Grid from './components/grid'
+import Navbody from './components/navbody'
 function App() {
   const [open, setopen] = useState(true)
   function toggle() {
@@ -12,6 +13,10 @@ function App() {
       open={open}
       toggle={toggle}
     />
+      {/* <Navbody
+        open={open}
+        toggle={toggle}
+      /> */}
       <Hero
         open={open}
         toggle={toggle}
