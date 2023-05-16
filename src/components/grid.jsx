@@ -99,6 +99,9 @@ export default function Grid(props) {
                 <div className="col">
                     {gridImage}
                 </div>
+
+
+                
                 <div className="col">
                     {columntwo}
                 </div>
