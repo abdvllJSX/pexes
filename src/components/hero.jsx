@@ -5,6 +5,9 @@ import arrowup from '/assets/arrowup.svg'
 import arrowdown from '/assets/arrowdown.svg'
 import img from '/assets/img.svg'
 
+
+
+
 export default function Hero(props) {
     const [hover, setHover] = useState()
     return (
