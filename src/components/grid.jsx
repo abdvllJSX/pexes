@@ -2,83 +2,60 @@ import React, { Component, useEffect, useState } from "react";
 import './styles/grid.scss'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import arrowup from '/assets/arrowup.svg'
 import arrowdown from '/assets/arrowdown.svg'
-import Slider from "react-slick";
 import GridImage from "./columnone";
-import ColumnTwo from "./columntwo";
-import ColumnThree from "./columnthree";
+
 
 
 export default function Grid(props) {
-    function columnOne() {
-        let imageArray = []
-        for (let i = 0; i < 10; i++) {
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+    useEffect(() => {
+        window.addEventListener("resize", function() {
+            setWindowWidth(window.innerWidth)
+        })
+    }, [])
+    const check = windowWidth <= 416 ? 2 : 3
+    function createImage() {
+        let allImageGrid = []
+        for (let i = 0; i < 30; i++) {
             const img = `https://picsum.photos/400/${i % 2 === 0 ? 400 : 700}?image=${i * 5 + 10}`
-            imageArray.push({
+            allImageGrid.push({
                 src: img,
                 id: i,
                 onHover: false
             })
         }
-        return imageArray
+        return allImageGrid
     }
 
-    function columnTwo() {
-        let imageArray = []
-        for (let i = 10; i < 20; i++) {
-            const img = `https://picsum.photos/400/${i % 2 === 0 ? 600 : 700}?image=${i * 5 + 10}`
-            imageArray.push({
-                src: img,
-                id: i,
-                onHover: false
-            })
+    function splitImagesIntoSubImages(array, X) {
+        const subImages = [];
+        for (let i = 0; i < X; i++) {
+            const subImage = [];
+            for (let j = i; j < array.length; j += X) {
+                subImage.push(array[j]);
+            }
+            subImages.push(subImage);
         }
-        return imageArray
+        return subImages;
     }
+    //  console.log(createImage())
 
-
-    function columnThree() {
-        let imageArray = []
-        for (let i = 20; i < 31; i++) {
-            const img = `https://picsum.photos/400/${i % 3 === 0 ? 300 : 700}?image=${i * 5 + 10}`
-            imageArray.push({
-                src: img,
-                id: i,
-                onHover: false
-            })
-        }
-        return imageArray
-    }
-
-    const gridImage = columnOne().map(image => (
-        <GridImage
-            src={image.src}
-            key={image.id}
-            id={image.id}
-            on={image.onHover}
+    const imageRender = createImage().map(arr => (
+        <GridImage 
+            src={arr.src}
+            key={arr.id}
+            id={arr.id}
         />
     ))
-
-    const columntwo = columnTwo().map(image => (
-        <ColumnTwo
-            src={image.src}
-            key={image.id}
-            id={image.id}
-            on={image.onHover}
-        />
+    console.log(splitImagesIntoSubImages(imageRender, check))
+    const eachColumn = splitImagesIntoSubImages(imageRender, check).map(column => (
+        <div className="column" key={column.id}>
+            {column}
+        </div>
     ))
 
-    const columnthree = columnThree().map(image => (
-        <ColumnThree
-            src={image.src}
-            key={image.id}
-            id={image.id}
-            on={image.onHover}
-        />
-    ))
-
-
+    console.log(eachColumn)
     return (
         <div className="grid-wrapper" style={props.open ? { display: "block" } : { display: "none" }}>
             <div className="carousel-container">
@@ -96,18 +73,7 @@ export default function Grid(props) {
             </div>
 
             <div className="grid-row">
-                <div className="col">
-                    {gridImage}
-                </div>
-
-
-                
-                <div className="col">
-                    {columntwo}
-                </div>
-                <div className="col col-3">
-                    {columnthree}
-                </div>
+                {eachColumn}
             </div>
         </div>
     )
