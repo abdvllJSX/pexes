@@ -18,7 +18,7 @@ export default function Grid(props) {
     function createImage() {
         let allImageGrid = []
         for (let i = 0; i < 30; i++) {
-            const img = `https://picsum.photos/400/${i % 2 === 0 ? 400 : 700}?image=${i * 5 + 10}`
+            const img = `https://picsum.photos/400/${i % 3 === 0 ? 400 : 700}?image=${i * 5 + 10}`
             allImageGrid.push({
                 src: img,
                 id: i,

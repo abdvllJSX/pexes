@@ -14,13 +14,16 @@
     background-position: center;
     top: 0;
     bottom: 0;
-
+    @media (orientation: portrait) {
+        background-image: url('/assets/images/mobilebackground.jpeg');
+        background-size: cover;
+        height: 55vh;
+    }
     @include mobile {
         background-image: url('/assets/images/mobilebackground.jpeg');
         background-size: cover;
         height: 55vh;
     }
-
     @include small-screen {
         height: 60vh;
     }
@@ -40,7 +43,9 @@
         @include mobile {
             height: 55vh;
         }
-
+        @media (orientation: portrait) {
+            height: 55vh;
+        }
         @include small-screen {
             height: 60vh;
         }
@@ -48,7 +53,6 @@
     }
 
     .main-content {
-        
         position: absolute;
         z-index: 1;
 
@@ -65,10 +69,9 @@
         .main-content-header {
             color: $white;
             font-size: 2.8rem;
-            font-weight: 600;
-            max-width: 650px;
-            line-height: 40px;
-
+            font-weight: 500;
+            max-width: 30ch;
+            line-height: 45px;
             @include mobile {
                 font-size: 34px;
                 max-width: 650px
@@ -86,7 +89,7 @@
             padding: 5px;
             display: flex;
             width: 90%;
-            height: 45px;
+            height: 50px;
             border-radius: 10px;
             background-color: $white;
             margin-top: 30px;
@@ -149,6 +152,7 @@
                 h5 {
                     text-transform: capitalize;
                     font-weight: 500;
+                    font-size: 15px;
 
                     @include small-screen {
                         display: none;
@@ -204,7 +208,7 @@
             }
 
             margin-top: 30px;
-            font-size: 1.4rem;
+            font-size: 16px;
             color: $white;
             @include small-screen {
                 font-size: 12px;
